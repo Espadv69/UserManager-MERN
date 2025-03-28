@@ -4,3 +4,30 @@
   --light-color: #ECDCBF;
   --background-color: #F8F2DE;
 }
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 10px 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--light-color);
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 5px;
+}
+
+.nav-link.active {
+  color: white;
+  font-size: 1.1em;
+}
