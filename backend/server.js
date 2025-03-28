@@ -3,6 +3,9 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 
+// Home route
+const HOME = '/'
+
 // dotenv config to load environment variables from .env file
 dotenv.config()
 
@@ -14,7 +17,12 @@ app.use(cors())
 app.use(express.json())
 
 // MongoDB connection 🪴
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected ✅'))
-  .catch((err) => console.error('MongoDB connection failed ❌', err))
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI)
+    console.log('🟢 Connected to MongoDB')
+  } catch (err) {
+    console.error('🔴 MongoDB Connection Error:', err)
+    process.exit(1)
+  }
+}
