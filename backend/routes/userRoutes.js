@@ -1,6 +1,5 @@
 import express from 'express'
 
-const WELCOME = '/'
 const API_USERS = '/api/users'
 const API_USERS_ID = '/api/users/:id'
 
