@@ -1,8 +1,8 @@
 import express from 'express'
 import { addUser, getUsers } from '../controllers/userController.js'
 
-const API_USERS = '/api/users'
-const API_USERS_ID = '/api/users/:id'
+const API_USERS = '/users'
+const API_USERS_ID = '/users/:id'
 
 const router = express.Router()
 
