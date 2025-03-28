@@ -7,7 +7,7 @@
 
 .nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: var(--primary-color);
   padding: 10px 0;
