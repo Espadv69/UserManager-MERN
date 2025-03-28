@@ -1,3 +1,3 @@
-const UserList = () => {}
+const UserListPage = () => {}
 
-export default UserList
+export default UserListPage
