@@ -1,5 +1,10 @@
 :root {
   --font: 'Inter Variable', sans-serif;
+
+  --primary-color: #D84040;
+  --secondary-color: #A31D1D;
+  --light-color: #ECDCBF;
+  --background-color: #F8F2DE;
 }
 
 *,
@@ -12,4 +17,6 @@
 
 body {
   font-family: var(--font);
+  background-color: var(--background-color);
 }
+
