@@ -58,4 +58,8 @@ const startServer = async () => {
       process.exit(0)
     })
   }
+
+  // Handle termination signals
+  process.on('SIGINT', cleanUp)
+  process.on('SIGTERM', cleanUp)
 }
