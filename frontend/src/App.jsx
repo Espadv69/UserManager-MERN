@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import UserList from './pages/UserListPage'
+import UserListPage from './pages/UserListPage'
+import AddUserPage from './pages/AddUser'
+import ExplanationPage from './pages/Explanation'
 
 // Paths
 const USER_LIST = '/'
@@ -12,7 +14,9 @@ const App = () => {
     <Router>
       {/* Add NavBar */}
       <Routes>
-        <Route path={USER_LIST} element={UserList} />
+        <Route path={USER_LIST} element={UserListPage} />
+        <Route path={USER_CREATE} element={AddUserPage} />
+        <Route path={EXPLANATION} element={ExplanationPage} />
       </Routes>
     </Router>
   )
