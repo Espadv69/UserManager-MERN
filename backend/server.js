@@ -2,9 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import router from './routes/userRoutes.js'
 
 // Home route
 const HOME = '/'
+// API route
+const API = '/api'
 
 // dotenv config to load environment variables from .env file
 dotenv.config()
