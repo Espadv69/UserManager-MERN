@@ -63,3 +63,6 @@ const startServer = async () => {
   process.on('SIGINT', cleanUp)
   process.on('SIGTERM', cleanUp)
 }
+
+// Start the server
+startServer()
