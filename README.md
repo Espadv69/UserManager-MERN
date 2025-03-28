@@ -54,17 +54,15 @@ A simple full-stack MERN project that allows users to be added through a form, v
   npm run dev
 ```
 
+## 📷 Screenshots
+
+Soon...
+
+---
+
 ## 📜 License
 
 This project is open-source and available under the
 [MIT License](https://opensource.org/license/mit).
 
----
-
-## 👨‍💻 Made with ❤️ by [AitorDev/Espadv69]
-
----
-
-## 📷 Screenshots
-
-Soon...
+## Made with ❤️ by `Espadv69`
