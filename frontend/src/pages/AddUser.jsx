@@ -1,3 +1,3 @@
-const AddUser = () => {}
+const AddUserPage = () => {}
 
-export default AddUser
+export default AddUserPage
