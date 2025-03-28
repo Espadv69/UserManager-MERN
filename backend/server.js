@@ -26,3 +26,8 @@ const connectDB = async () => {
     process.exit(1)
   }
 }
+
+// Entry point
+app.get(HOME, async (req, res) => {
+  res.send('Welcome to the User Management API! 🟢')
+})
