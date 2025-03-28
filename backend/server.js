@@ -31,3 +31,14 @@ const connectDB = async () => {
 app.get(HOME, async (req, res) => {
   res.send('Welcome to the User Management API! 🟢')
 })
+
+// Start the server and connect to MongoDB
+const startServer = async () => {
+  await connectDB()
+
+  const PORT = process.env.PORT || 5000
+
+  const server = app.listen(PORT, () =>
+    console.log(`🚀 Server running on http://localhost:${PORT}`),
+  )
+}
