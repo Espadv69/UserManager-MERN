@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Espadv69/UserManager-MERN/issues"
   },
-  "homepage": "https://github.com/Espadv69/UserManager-MERN#readme"
+  "homepage": "https://github.com/Espadv69/UserManager-MERN#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
