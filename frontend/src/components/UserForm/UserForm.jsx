@@ -40,12 +40,6 @@ const UserForm = () => {
 
       const data = await response.json()
       console.log('User added successfully:', data)
-
-      // Clear the form fields after successful submission 🧼
-      setFirstName('')
-      setLastName('')
-      setEmail('')
-      setIdentificationNumber('')
     } catch (err) {
       console.error('Error adding user:', err)
       // setError(err.message) // Todo: Add error handling
@@ -60,6 +54,64 @@ const UserForm = () => {
     // Call the addUser function to add the user to the database 📗
     addUser()
   }
+
+  return (
+    <section className="user-form__container">
+      <header className="user-form__header">
+        <h1 className="user-form__title">Add User</h1>
+      </header>
+
+      <form className="user-form" onSubmit={handleSubmit}>
+        <label className="user-form__label">
+          FirstName
+          <input
+            type="text"
+            className="user-form__input"
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="Add first name"
+          />
+        </label>
+
+        <label className="user-form__label">
+          LastName
+          <input
+            type="text"
+            className="user-form__input"
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder="Add last name"
+          />
+        </label>
+
+        <label className="user-form__label">
+          Email
+          <input
+            type="email"
+            className="user-form__input"
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Add email"
+          />
+        </label>
+
+        <label className="user-form__label">
+          Identification
+          <input
+            type="text"
+            className="user-form__input"
+            onChange={(e) => setIdentificationNumber(e.target.value)}
+            placeholder="Add personal identification"
+          />
+        </label>
+
+        <button className="user-form__button">Add User</button>
+      </form>
+
+      <footer className="user-form__footer-container">
+        <p className="user-form__footer">
+          Made with ❤️ by <span className="name">Espadv69</span>
+        </p>
+      </footer>
+    </section>
+  )
 }
 
 export default UserForm
