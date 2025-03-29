@@ -51,6 +51,15 @@ const UserForm = () => {
       // setError(err.message) // Todo: Add error handling
     }
   }
+
+  // Handle form submission 📩
+  const handleSubmit = (e) => {
+    // Prevent default form submission behavior 🚫
+    e.preventDefault()
+
+    // Call the addUser function to add the user to the database 📗
+    addUser()
+  }
 }
 
 export default UserForm
