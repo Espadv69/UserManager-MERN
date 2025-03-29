@@ -76,6 +76,7 @@ const UserForm = () => {
           FirstName
           <input
             type="text"
+            value={firstName}
             className="user-form__input"
             onChange={(e) => setFirstName(e.target.value)}
             placeholder="Add first name"
@@ -86,6 +87,7 @@ const UserForm = () => {
           LastName
           <input
             type="text"
+            value={lastName}
             className="user-form__input"
             onChange={(e) => setLastName(e.target.value)}
             placeholder="Add last name"
@@ -96,6 +98,7 @@ const UserForm = () => {
           Email
           <input
             type="email"
+            value={email}
             className="user-form__input"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Add email"
@@ -106,6 +109,7 @@ const UserForm = () => {
           Identification
           <input
             type="text"
+            value={identificationNumber}
             className="user-form__input"
             onChange={(e) => setIdentificationNumber(e.target.value)}
             placeholder="Add personal identification"
