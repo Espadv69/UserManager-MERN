@@ -97,8 +97,21 @@
 /* Error */
 .user-form__error {
   color: var(--secondary-color);
-  background-color: rgba(211, 47, 47, 0.1); /* Un fondo sutil */
+  background-color: rgba(211, 47, 47, 0.1);
   border: 1px solid var(--secondary-color);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Success */
+.user-form__success {
+  color: var(--primary-color);
+  background-color: rgba(216, 64, 64, 0.1);
+  border: 1px solid var(--primary-color);
   padding: 10px;
   border-radius: 5px;
   font-size: 14px;
