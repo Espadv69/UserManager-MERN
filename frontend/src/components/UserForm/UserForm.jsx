@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { API_URL } from '../../utils/const'
+import { addUser } from '../../services/userService.js'
 
 import Form from './Form'
 import './UserForm.css'
@@ -23,61 +23,29 @@ const UserForm = () => {
     }
   }, [successMessage])
 
-  // Add user to the database 📗
-  const addUser = async () => {
-    // Stop if any field is empty
-    if (!firstName || !lastName || !email || !identificationNumber)
-      return setError('Please fill in all fields')
-
-    // Create a new user object 🆕
-    const newUser = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      identificationNumber: identificationNumber,
-    }
-
-    // Send a POST request to the server to add the user 📬
-    try {
-      // Response from the server 📬
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newUser),
-      })
-
-      // Check if the response is ok (status code 200-299) ✅
-      if (!response.ok) throw new Error('Failed to add user')
-
-      const data = await response.json()
-      console.log('User added successfully:', data)
-
-      return true // User added successfully 👍
-    } catch (err) {
-      console.error('Error adding user:', err)
-      setError(err.message)
-      return false // User not added successfully 👎
-    }
-  }
-
   // Handle form submission 📩
   const handleSubmit = async (e) => {
     // Prevent default form submission behavior 🚫
     e.preventDefault()
 
     // Call the addUser function to add the user to the database 📥
-    const success = await addUser()
+    const result = await addUser({
+      firstName,
+      lastName,
+      email,
+      identificationNumber,
+    })
 
     // Clear the form fields if the user was added successfully ✅
-    if (success) {
+    if (result) {
       setFirstName('')
       setLastName('')
       setEmail('')
       setIdentificationNumber('')
       setError('')
       setSuccessMessage('User added successfully! 🎉')
+    } else {
+      setError(result)
     }
   }
 
