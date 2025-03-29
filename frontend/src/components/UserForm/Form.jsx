@@ -10,6 +10,7 @@ const Form = ({
   setEmail,
   identificationNumber,
   setIdentificationNumber,
+  error,
 }) => {
   return (
     <form className="user-form" onSubmit={onSubmit}>
@@ -45,6 +46,7 @@ const Form = ({
         inputPlaceholder="Enter Identification Number"
       />
 
+      {error && <p className="user-form__error">{error}</p>}
       <button className="user-form__button">Add User</button>
     </form>
   )
