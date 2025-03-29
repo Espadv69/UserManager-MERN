@@ -13,18 +13,14 @@ const UserForm = () => {
   const [error, setError] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
 
-  let intervalId = null
-
   // Clear the success message after 4 seconds ⏳
   useEffect(() => {
     if (successMessage) {
-      intervalId = setTimeout(() => {
-        setSuccessMessage('User added successfully!')
+      const timeoutId = setTimeout(() => {
+        setSuccessMessage('')
       }, 4000)
-    }
 
-    return () => {
-      clearTimeout(intervalId)
+      return () => clearTimeout(timeoutId)
     }
   }, [successMessage])
 
@@ -82,6 +78,7 @@ const UserForm = () => {
       setEmail('')
       setIdentificationNumber('')
       setError('')
+      setSuccessMessage('User added successfully! 🎉')
     }
   }
 
