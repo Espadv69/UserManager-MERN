@@ -18,7 +18,7 @@ const UserForm = () => {
     if (successMessage) {
       const timeoutId = setTimeout(() => {
         setSuccessMessage('')
-      }, 4000)
+      }, 10000)
 
       return () => clearTimeout(timeoutId)
     }
