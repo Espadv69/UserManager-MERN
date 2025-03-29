@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
+import { API_URL } from '../../utils/const'
 
 import Form from './Form'
 import './UserForm.css'
-
-const API_URL = 'http://localhost:5000/api/users'
 
 const UserForm = () => {
   const [firstName, setFirstName] = useState('')
