@@ -39,8 +39,13 @@ const UserList = () => {
           {users.map((user) => (
             <li className="user-list__li" key={user._id}>
               <div className="user-list__info">
-                <p className="user-list__name">{user.name}</p>
+                <p className="user-list__name">
+                  {user.firstName} {user.lastName}
+                </p>
                 <p className="user-list__email">{user.email}</p>
+                <p className="user-list__identify">
+                  {user.identificationNumber}
+                </p>
               </div>
               <div className="user-list__actions">
                 <button className="user-list__btn">Edit</button>
