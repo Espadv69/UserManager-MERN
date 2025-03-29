@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import UserFormInput from './UserFormInput'
+import Form from './Form'
 import './UserForm.css'
 
 const API_URL = 'http://localhost:5000/api/users'
@@ -73,41 +73,17 @@ const UserForm = () => {
         <h1 className="user-form__title">Add User</h1>
       </header>
 
-      <form className="user-form" onSubmit={handleSubmit}>
-        <UserFormInput
-          labelName="First Name:"
-          inputType="text"
-          inputValue={firstName}
-          setValue={setFirstName}
-          inputPlaceholder="Enter First Name"
-        />
-
-        <UserFormInput
-          labelName="Last Name:"
-          inputType="text"
-          inputValue={lastName}
-          setValue={setLastName}
-          inputPlaceholder="Enter Last Name"
-        />
-
-        <UserFormInput
-          labelName="Email:"
-          inputType="email"
-          inputValue={email}
-          setValue={setEmail}
-          inputPlaceholder="Enter Email"
-        />
-
-        <UserFormInput
-          labelName="Identification Number:"
-          inputType="text"
-          inputValue={identificationNumber}
-          setValue={setIdentificationNumber}
-          inputPlaceholder="Enter Identification Number"
-        />
-
-        <button className="user-form__button">Add User</button>
-      </form>
+      <Form
+        onSubmit={handleSubmit}
+        firstName={firstName}
+        setFirstName={setFirstName}
+        lastName={lastName}
+        setLastName={setLastName}
+        email={email}
+        setEmail={setEmail}
+        identificationNumber={identificationNumber}
+        setIdentificationNumber={setIdentificationNumber}
+      />
 
       <footer className="user-form__footer-container">
         <p className="user-form__footer">
