@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './UserForm.css'
 
+const API_URL = 'http://localhost:5000/api/users'
+
 const UserForm = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -21,6 +23,30 @@ const UserForm = () => {
       email: email,
       identificationNumber: identificationNumber,
     }
+
+    // Send a POST request to the server to add the user 📬
+    try {
+      // Response from the server 📬
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      })
+
+      // Check if the response is ok (status code 200-299) ✅
+      if (!response.ok) throw new Error('Failed to add user')
+
+      const data = await response.json()
+      console.log('User added successfully:', data)
+
+      // Clear the form fields after successful submission 🧼
+      setFirstName('')
+      setLastName('')
+      setEmail('')
+      setIdentificationNumber('')
+    } catch (err) {}
   }
 }
 
