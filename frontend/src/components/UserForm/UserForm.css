@@ -93,3 +93,16 @@
   font-weight: bold;
   color: var(--primary-color);
 }
+
+/* Error */
+.user-form__error {
+  color: var(--secondary-color);
+  background-color: rgba(211, 47, 47, 0.1); /* Un fondo sutil */
+  border: 1px solid var(--secondary-color);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
