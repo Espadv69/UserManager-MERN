@@ -1,4 +1,6 @@
 import { useState } from 'react'
+
+import UserFormInput from './UserFormInput'
 import './UserForm.css'
 
 const API_URL = 'http://localhost:5000/api/users'
@@ -72,49 +74,37 @@ const UserForm = () => {
       </header>
 
       <form className="user-form" onSubmit={handleSubmit}>
-        <label className="user-form__label">
-          FirstName
-          <input
-            type="text"
-            value={firstName}
-            className="user-form__input"
-            onChange={(e) => setFirstName(e.target.value)}
-            placeholder="Add first name"
-          />
-        </label>
+        <UserFormInput
+          labelName="First Name:"
+          inputType="text"
+          inputValue={firstName}
+          setValue={setFirstName}
+          inputPlaceholder="Enter First Name"
+        />
 
-        <label className="user-form__label">
-          LastName
-          <input
-            type="text"
-            value={lastName}
-            className="user-form__input"
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder="Add last name"
-          />
-        </label>
+        <UserFormInput
+          labelName="Last Name:"
+          inputType="text"
+          inputValue={lastName}
+          setValue={setLastName}
+          inputPlaceholder="Enter Last Name"
+        />
 
-        <label className="user-form__label">
-          Email
-          <input
-            type="email"
-            value={email}
-            className="user-form__input"
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Add email"
-          />
-        </label>
+        <UserFormInput
+          labelName="Email:"
+          inputType="email"
+          inputValue={email}
+          setValue={setEmail}
+          inputPlaceholder="Enter Email"
+        />
 
-        <label className="user-form__label">
-          Identification
-          <input
-            type="text"
-            value={identificationNumber}
-            className="user-form__input"
-            onChange={(e) => setIdentificationNumber(e.target.value)}
-            placeholder="Add personal identification"
-          />
-        </label>
+        <UserFormInput
+          labelName="Identification Number:"
+          inputType="text"
+          inputValue={identificationNumber}
+          setValue={setIdentificationNumber}
+          inputPlaceholder="Enter Identification Number"
+        />
 
         <button className="user-form__button">Add User</button>
       </form>
