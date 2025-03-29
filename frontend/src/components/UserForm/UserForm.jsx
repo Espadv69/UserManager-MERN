@@ -40,19 +40,29 @@ const UserForm = () => {
 
       const data = await response.json()
       console.log('User added successfully:', data)
+      return true // User added successfully 👍
     } catch (err) {
       console.error('Error adding user:', err)
       // setError(err.message) // Todo: Add error handling
+      return false // User not added successfully 👎
     }
   }
 
   // Handle form submission 📩
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // Prevent default form submission behavior 🚫
     e.preventDefault()
 
-    // Call the addUser function to add the user to the database 📗
-    addUser()
+    // Call the addUser function to add the user to the database 📥
+    const success = await addUser()
+
+    // Clear the form fields if the user was added successfully ✅
+    if (success) {
+      setFirstName('')
+      setLastName('')
+      setEmail('')
+      setIdentificationNumber('')
+    }
   }
 
   return (
