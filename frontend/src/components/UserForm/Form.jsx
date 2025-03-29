@@ -11,6 +11,7 @@ const Form = ({
   identificationNumber,
   setIdentificationNumber,
   error,
+  success,
 }) => {
   return (
     <form className="user-form" onSubmit={onSubmit}>
@@ -47,6 +48,7 @@ const Form = ({
       />
 
       {error && <p className="user-form__error">{error}</p>}
+      {success && <p className="user-form__success">{success}</p>}
       <button className="user-form__button">Add User</button>
     </form>
   )
