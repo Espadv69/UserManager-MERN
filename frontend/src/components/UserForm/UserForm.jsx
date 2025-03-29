@@ -25,10 +25,8 @@ const UserForm = () => {
 
   // Handle form submission 📩
   const handleSubmit = async (e) => {
-    // Prevent default form submission behavior 🚫
     e.preventDefault()
 
-    // Call the addUser function to add the user to the database 📥
     const result = await addUser({
       firstName,
       lastName,
@@ -36,16 +34,22 @@ const UserForm = () => {
       identificationNumber,
     })
 
-    // Clear the form fields if the user was added successfully ✅
-    if (result) {
+    if (result === true) {
+      // ✅ Success
       setFirstName('')
       setLastName('')
       setEmail('')
       setIdentificationNumber('')
       setError('')
       setSuccessMessage('User added successfully! 🎉')
+    } else if (result === false) {
+      // ❌ Empty fields error
+      setError('Please fill in all fields')
+      setSuccessMessage('')
     } else {
+      // ❌ API error
       setError(result)
+      setSuccessMessage('')
     }
   }
 
