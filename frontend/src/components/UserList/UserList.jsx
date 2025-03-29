@@ -25,6 +25,33 @@ const UserList = () => {
 
     fetchUsers()
   }, [])
+
+  return (
+    <section className="user-list__container">
+      <h1 className="user-list__title">User List</h1>
+
+      {loading ? (
+        <p>
+          Loading users... <span className="loader"></span>
+        </p>
+      ) : (
+        <ul className="user-list__ul">
+          {users.map((user) => (
+            <li className="user-list__li" key={user._id}>
+              <div className="user-list__info">
+                <p className="user-list__name">{user.name}</p>
+                <p className="user-list__email">{user.email}</p>
+              </div>
+              <div className="user-list__actions">
+                <button className="user-list__btn">Edit</button>
+                <button className="user-list__btn">Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )
 }
 
 export default UserList
