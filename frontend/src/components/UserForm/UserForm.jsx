@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Form from './Form'
 import './UserForm.css'
@@ -11,6 +11,22 @@ const UserForm = () => {
   const [email, setEmail] = useState('')
   const [identificationNumber, setIdentificationNumber] = useState('')
   const [error, setError] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
+
+  let intervalId = null
+
+  // Clear the success message after 4 seconds ⏳
+  useEffect(() => {
+    if (successMessage) {
+      intervalId = setTimeout(() => {
+        setSuccessMessage('User added successfully!')
+      }, 4000)
+    }
+
+    return () => {
+      clearTimeout(intervalId)
+    }
+  }, [successMessage])
 
   // Add user to the database 📗
   const addUser = async () => {
@@ -42,6 +58,7 @@ const UserForm = () => {
 
       const data = await response.json()
       console.log('User added successfully:', data)
+
       return true // User added successfully 👍
     } catch (err) {
       console.error('Error adding user:', err)
@@ -85,6 +102,7 @@ const UserForm = () => {
         identificationNumber={identificationNumber}
         setIdentificationNumber={setIdentificationNumber}
         error={error}
+        success={successMessage}
       />
 
       <footer className="user-form__footer-container">
