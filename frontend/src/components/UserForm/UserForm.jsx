@@ -46,7 +46,10 @@ const UserForm = () => {
       setLastName('')
       setEmail('')
       setIdentificationNumber('')
-    } catch (err) {}
+    } catch (err) {
+      console.error('Error adding user:', err)
+      // setError(err.message) // Todo: Add error handling
+    }
   }
 }
 
