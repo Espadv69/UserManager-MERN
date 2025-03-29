@@ -58,7 +58,6 @@ A simple full-stack MERN project that allows users to be added through a form, v
 
 #### Add User Page
 
-![Add User PageLarge](./imagePreview/addUserPage.png)
 
 ---
 
