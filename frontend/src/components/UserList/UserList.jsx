@@ -26,6 +26,27 @@ const UserList = () => {
     fetchUsers()
   }, [])
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`${API_URL}/:${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id }),
+      })
+
+      if (!response.ok) throw new Error('Network response was not ok')
+
+      const data = await response.json()
+      console.log('User deleted:', data)
+
+      setUsers((prevUsers) => prevUsers.filter((user) => user._id !== id))
+    } catch (err) {
+      console.error('Error deleting user:', err)
+    }
+  }
+
   return (
     <section className="user-list__container">
       <h1 className="user-list__title">User List</h1>
@@ -49,7 +70,12 @@ const UserList = () => {
               </div>
               <div className="user-list__actions">
                 <button className="user-list__btn">Edit</button>
-                <button className="user-list__btn">Delete</button>
+                <button
+                  className="user-list__btn"
+                  onClick={() => handleDelete(user._id)}
+                >
+                  Delete
+                </button>
               </div>
             </li>
           ))}
