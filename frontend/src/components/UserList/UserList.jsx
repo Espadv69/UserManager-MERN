@@ -37,6 +37,7 @@ const UserList = () => {
     if (!editingUser) return
 
     try {
+      // Response to the PUT request to update the user
       const response = await fetch(API_USERS_ID(editingUser._id), {
         method: 'PUT',
         headers: {
@@ -45,17 +46,21 @@ const UserList = () => {
         body: JSON.stringify(editingUser),
       })
 
+      // Check if the response is ok
       if (!response.ok) throw new Error('Network response was not ok')
 
+      // Parse the response to JSON
       const updateUser = await response.json()
       console.log('User updated:', updateUser)
 
+      // Update the users in the state
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
           user._id === updateUser._id ? updateUser : user,
         ),
       )
 
+      // Exit editing mode
       setEditingUser(null)
     } catch (err) {}
   }
