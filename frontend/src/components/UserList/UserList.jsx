@@ -111,16 +111,19 @@ const UserList = () => {
                   <>
                     <input
                       type="text"
+                      className="user-list__input"
                       value={editingUser.firstName}
                       onChange={(e) => handleInputChange(e, 'firstName')}
                     />
                     <input
                       type="text"
+                      className="user-list__input"
                       value={editingUser.lastName}
                       onChange={(e) => handleInputChange(e, 'lastName')}
                     />
                     <input
                       type="email"
+                      className="user-list__input"
                       value={editingUser.email}
                       onChange={(e) => handleInputChange(e, 'email')}
                     />
