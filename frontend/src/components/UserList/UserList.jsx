@@ -6,6 +6,7 @@ import './UserList.css'
 const UserList = () => {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
+  const [editingUser, setEditingUser] = useState(null)
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -26,6 +27,7 @@ const UserList = () => {
     fetchUsers()
   }, [])
 
+  // Function to handle user deletion 🗑️
   const handleDelete = async (id) => {
     try {
       const response = await fetch(API_USERS_ID(id), {
