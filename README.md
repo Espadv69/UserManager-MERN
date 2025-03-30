@@ -59,19 +59,19 @@ A simple full-stack MERN project that allows users to be added through a form, v
 ### User List Page
 
 <p align="center">
-  <img src="./imagePreview/.png" alt="User List Page" />
+  <img src="./imagePreview/userListPage.png" alt="User List Page" />
 </p>
 
 ### User List Page Edit
 
 <p align="center">
-  <img src="./imagePreview/.png" alt="User List Page" />
+  <img src="./imagePreview/userListEdit.png" alt="User List Page" />
 </p>
 
 ### Add User Page
 
 <p align="center">
-  <img src="./imagePreview/.png" alt="Add User Page" />
+  <img src="./imagePreview/addUserPage.png" alt="Add User Page" />
 </p>
 
 ---
