@@ -2,7 +2,7 @@
   "name": "usermanager-mern",
   "version": "1.0.0",
   "private": true,
-  "description": "A simple full-stack MERN project to manage users with a form, dynamic list, and project explanation.",
+  "description": "A simple full-stack MERN project to manage users with a form, dynamic list of users, and a backend API.",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
