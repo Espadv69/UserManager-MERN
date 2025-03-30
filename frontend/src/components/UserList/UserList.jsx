@@ -9,6 +9,10 @@ const UserList = () => {
   const [editingUser, setEditingUser] = useState(null)
 
   useEffect(() => {
+    console.log('Editing user changed:', editingUser)
+  }, [editingUser])
+
+  useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(API_URL)
@@ -50,13 +54,13 @@ const UserList = () => {
       if (!response.ok) throw new Error('Network response was not ok')
 
       // Parse the response to JSON
-      const updateUser = await response.json()
-      console.log('User updated:', updateUser)
+      const updatedUser = await response.json()
+      console.log('User updated:', updatedUser)
 
       // Update the users in the state
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
-          user._id === updateUser._id ? updateUser : user,
+          user._id === updatedUser._id ? { ...user, ...updatedUser } : user,
         ),
       )
 
@@ -136,7 +140,7 @@ const UserList = () => {
                 ) : (
                   <button
                     className="user-list__btn"
-                    onClick={() => setEditingUser(user)}
+                    onClick={() => setEditingUser({ ...user })}
                   >
                     Edit
                   </button>
