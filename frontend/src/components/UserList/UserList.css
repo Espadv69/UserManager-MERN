@@ -13,13 +13,17 @@
 /* Main container */
 .user-list__container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 20px;
   background: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  /* Height removed for better responsiveness */
+  height: 70dvh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--light-color);
+  scroll-behavior: smooth;
 }
 
 /* Title */
