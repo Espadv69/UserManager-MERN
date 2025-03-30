@@ -62,7 +62,9 @@ const UserList = () => {
 
       // Exit editing mode
       setEditingUser(null)
-    } catch (err) {}
+    } catch (err) {
+      console.error('Error updating user:', err)
+    }
   }
 
   // Function to handle user deletion 🗑️
@@ -99,16 +101,46 @@ const UserList = () => {
           {users.map((user) => (
             <li className="user-list__li" key={user._id}>
               <div className="user-list__info">
-                <p className="user-list__name">
-                  {user.firstName} {user.lastName}
-                </p>
-                <p className="user-list__email">{user.email}</p>
-                <p className="user-list__identify">
-                  {user.identificationNumber}
-                </p>
+                {editingUser && editingUser._id === user._id ? (
+                  <>
+                    <input
+                      type="text"
+                      value={editingUser.firstName}
+                      onChange={(e) => handleInputChange(e, 'firstName')}
+                    />
+                    <input
+                      type="text"
+                      value={editingUser.lastName}
+                      onChange={(e) => handleInputChange(e, 'lastName')}
+                    />
+                    <input
+                      type="email"
+                      value={editingUser.email}
+                      onChange={(e) => handleInputChange(e, 'email')}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <p className="user-list__name">
+                      {user.firstName} {user.lastName}
+                    </p>
+                    <p className="user-list__email">{user.email}</p>
+                  </>
+                )}
               </div>
               <div className="user-list__actions">
-                <button className="user-list__btn">Edit</button>
+                {editingUser && editingUser._id === user._id ? (
+                  <button className="user-list__btn" onClick={handleUpdate}>
+                    Save
+                  </button>
+                ) : (
+                  <button
+                    className="user-list__btn"
+                    onClick={() => setEditingUser(user)}
+                  >
+                    Edit
+                  </button>
+                )}
                 <button
                   className="user-list__btn"
                   onClick={() => handleDelete(user._id)}
