@@ -1,6 +1,6 @@
 # UserManager-MERN 🚀
 
-A simple full-stack MERN project that allows users to be added through a form, view the user list dynamically, and includes a project explanation page with CodeSnap images.
+A simple full-stack MERN project that allows users to be added through a form, view the user list dynamically, edit user details, and delete users as needed.
 
 ## 🛠️ Technologies Used
 
@@ -22,7 +22,6 @@ A simple full-stack MERN project that allows users to be added through a form, v
 
 ✅ Add users through a form (name, last name, ID number, etc.)  
 ✅ View the list of added users dynamically  
-✅ Project explanation page with CodeSnap images
 
 ## ⚡ Installation & Setup
 
