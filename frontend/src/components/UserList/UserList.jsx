@@ -32,6 +32,34 @@ const UserList = () => {
     setEditingUser({ ...editingUser, [field]: e.target.value })
   }
 
+  // Function to handle user update ✏️
+  const handleUpdate = async () => {
+    if (!editingUser) return
+
+    try {
+      const response = await fetch(API_USERS_ID(editingUser._id), {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(editingUser),
+      })
+
+      if (!response.ok) throw new Error('Network response was not ok')
+
+      const updateUser = await response.json()
+      console.log('User updated:', updateUser)
+
+      setUsers((prevUsers) =>
+        prevUsers.map((user) =>
+          user._id === updateUser._id ? updateUser : user,
+        ),
+      )
+
+      setEditingUser(null)
+    } catch (err) {}
+  }
+
   // Function to handle user deletion 🗑️
   const handleDelete = async (id) => {
     try {
