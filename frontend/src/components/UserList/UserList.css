@@ -29,7 +29,6 @@
 /* Title */
 .user-list__title {
   font-size: 24px;
-  font-weight: bold;
   color: var(--primary-color);
   margin-bottom: 20px;
 }
