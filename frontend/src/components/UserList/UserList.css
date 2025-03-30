@@ -1,12 +1,12 @@
 /* Root colors */
 :root {
-  --primary-color: #D84040;
+  --primary-color: #d84040;
   /* Main color for actions or highlights */
-  --secondary-color: #A31D1D;
+  --secondary-color: #a31d1d;
   /* A darker shade of the primary color */
-  --light-color: #ECDCBF;
+  --light-color: #ecdcbf;
   /* Light color for background or accents */
-  --background-color: #F8F2DE;
+  --background-color: #f8f2de;
   /* Background color of the page */
 }
 
@@ -38,6 +38,7 @@
 .user-list__ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: start;
   /* Auto-fill columns */
   gap: 20px;
   list-style: none;
@@ -53,7 +54,9 @@
   background: white;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Hover effect on user item */
@@ -77,7 +80,7 @@
 }
 
 .user-list__identify {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--primary-color);
   margin: 0;
 }
@@ -87,6 +90,31 @@
   display: flex;
   gap: 10px;
   justify-content: center;
+}
+
+/* Editing */
+.user-list__input {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  background-color: var(--background-light);
+  color: var(--secondary-color);
+  font-size: 16px;
+  transition:
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.user-list__input:last-child {
+  color: #555;
+}
+
+.user-list__input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color-light);
+  outline: none;
 }
 
 /* Button styling */
