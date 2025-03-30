@@ -1,10 +1,10 @@
 :root {
   --font: 'Inter Variable', sans-serif;
 
-  --primary-color: #D84040;
-  --secondary-color: #A31D1D;
-  --light-color: #ECDCBF;
-  --background-color: #F8F2DE;
+  --primary-color: #d84040;
+  --secondary-color: #a31d1d;
+  --light-color: #ecdcbf;
+  --background-color: #f8f2de;
 }
 
 *,
