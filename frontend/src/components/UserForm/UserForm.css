@@ -23,8 +23,7 @@
 }
 
 .user-form__title {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 24px;
   color: var(--primary-color);
 }
 
