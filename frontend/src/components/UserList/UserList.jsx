@@ -27,6 +27,11 @@ const UserList = () => {
     fetchUsers()
   }, [])
 
+  // Function to handle user editing ✏️
+  const handleInputChange = (e, field) => {
+    setEditingUser({ ...editingUser, [field]: e.target.value })
+  }
+
   // Function to handle user deletion 🗑️
   const handleDelete = async (id) => {
     try {
