@@ -7,6 +7,7 @@ const UserList = () => {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
   const [editingUser, setEditingUser] = useState(null)
+  const [updateFlag, setUpdateFlag] = useState(false)
 
   useEffect(() => {
     console.log('Editing user changed:', editingUser)
@@ -29,7 +30,7 @@ const UserList = () => {
     }
 
     fetchUsers()
-  }, [])
+  }, [updateFlag])
 
   // Function to handle user editing ✏️
   const handleInputChange = (e, field) => {
@@ -66,6 +67,7 @@ const UserList = () => {
 
       // Exit editing mode
       setEditingUser(null)
+      setUpdateFlag((prev) => !prev) // Trigger re-render to show updated user
     } catch (err) {
       console.error('Error updating user:', err)
     }
