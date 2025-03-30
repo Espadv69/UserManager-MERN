@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { API_URL } from '../../utils/const.js'
+import { API_URL, API_USERS_ID } from '../../utils/const.js'
 
 import './UserList.css'
 
@@ -28,12 +28,11 @@ const UserList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`${API_URL}/:${id}`, {
+      const response = await fetch(API_USERS_ID(id), {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id }),
       })
 
       if (!response.ok) throw new Error('Network response was not ok')
