@@ -1,24 +1,42 @@
 :root {
-  --primary-color: #D84040;
-  --secondary-color: #A31D1D;
-  --light-color: #ECDCBF;
-  --background-color: #F8F2DE;
+  --primary-color: #d84040;
+  --secondary-color: #a31d1d;
+  --secondary-color-dark: #6f1414;
+  --light-color: #ecdcbf;
+  --background-color: #f8f2de;
 }
 
 .nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  gap: 5px;
   background-color: var(--primary-color);
-  padding: 10px 0;
+  padding: 10px 20px;
+}
+
+.nav h2 {
+  text-align: center;
+  color: var(--light-color);
+  font-size: 1.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  background: var(--secondary-color-dark);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--light-color);
   font-weight: bold;
-  padding: 10px;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 20px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .nav-link:hover {
@@ -30,4 +48,24 @@
 .nav-link.active {
   color: white;
   font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 5px 10px;
+  }
+
+  .nav h2 {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+  }
 }
