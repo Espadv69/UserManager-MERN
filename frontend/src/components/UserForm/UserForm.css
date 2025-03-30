@@ -1,9 +1,9 @@
 /* Variables de color */
 :root {
-  --primary-color: #D84040;
-  --secondary-color: #A31D1D;
-  --light-color: #ECDCBF;
-  --background-color: #F8F2DE;
+  --primary-color: #d84040;
+  --secondary-color: #a31d1d;
+  --light-color: #ecdcbf;
+  --background-color: #f8f2de;
 }
 
 /* Container */
@@ -52,7 +52,9 @@
   font-size: 1rem;
   background: var(--light-color);
   color: var(--secondary-color);
-  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    border 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .user-form__input:focus {
